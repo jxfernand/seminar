@@ -1,0 +1,747 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en-US" data-menu="leftalign">
+
+
+
+<style>
+
+        .container {
+            display: flex;
+            margin: auto;width:66%;
+
+        }
+        .column {
+            flex: 1;
+            padding: 20px;
+            border: 1px solid #ccc;
+        }
+        .left {
+            background-color: #f4f4f4;
+        }
+        .right {
+            background-color: #e4e4e4;
+        }
+
+
+        .form-section {
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .form-section h2 {
+            margin-top: 0;
+        }
+
+
+        .welcome{
+        text-align: center;
+
+        }
+
+ 	.fotografia{
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		}
+
+	.image-cropper {
+	  width: 100px;
+	  height: 100px;
+	  position: relative;
+	  overflow: hidden;
+	  border-radius: 50%;
+	 }
+
+	 .sentru {
+		display: block;
+		margin-left: 1px;
+		width: 50%;
+	    position: relative;
+	    overflow: hidden;
+	    border-radius: 9%;
+		}
+
+		.sentrufoto{
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		width: 80%;
+	    height: 80%;
+	    position: relative;
+	    overflow: hidden;
+	    border-radius: 9%;
+		}
+
+        .pin{
+            font-size: larger;
+        }
+   
+@media only screen and (max-width: 767px) {
+
+.container {
+            display: grid;
+            width: 100%;
+        }
+        .column {
+            flex: 1;
+            padding: 20px;
+            border: 1px solid #ccc;
+        }
+        .left {
+            background-color: #f4f4f4;
+            width: 88%;
+
+
+        }
+        .right {
+            background-color: #e4e4e4;
+            width: 100%;
+            
+        }
+
+        .quota-warning{
+            color: red;
+            font-size: 0.8rem
+
+        }
+        
+
+}
+
+
+    </style>
+
+<head>
+
+    <title>Harnessing Digital Transformation to Strengthen Public Services</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="stylesheet" href="{% static 'js/plugins/revslider/public/assets/css/settings.css' %}" type='text/css' media='all'>
+
+    <link rel="stylesheet" href="{% static 'css/reset.css' %}" type='text/css' media='all'>
+    <link rel="stylesheet" href="{% static 'css/wordpress.css' %}" type='text/css' media='all'>
+    <link rel="stylesheet" href="{% static 'css/animation.css' %}" type='text/css' media='all'>
+    <link rel="stylesheet" href="{% static 'css/ilightbox/ilightbox.css' %}" type='text/css' media='all'>
+    <link rel="stylesheet" href="{% static 'css/jqueryui/custom.css' %}" type='text/css' media='all'>
+    <link rel="stylesheet" href="{% static 'js/plugins/mediaelement/mediaelementplayer-legacy.min.css' %}" type='text/css' media='all'>
+    <link rel="stylesheet" href="{% static 'js/plugins/flexslider/flexslider.css' %}" type='text/css' media='all'>
+    <link rel="stylesheet" href="{% static 'css/tooltipster.css' %}" type='text/css' media='all'>
+    <link rel="stylesheet" href="{% static 'css/odometer-theme-minimal.css' %}" type='text/css' media='all'>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type='text/css' media='all'>
+    <link rel="stylesheet" href="{% static 'css/menus/leftalignmenu.css' %}" type='text/css' media='all'>
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}" type='text/css' media='all'>
+    <link rel="stylesheet" href="{% static 'css/themify-icons.css' %}" type='text/css' media='all'>
+    <link rel="stylesheet" href="{% static 'css/grandconference_custom_css.css' %}" type='text/css' media='all'>
+    <link rel="stylesheet" href="{% static 'css/kirki-styles.css' %}" type='text/css' media='all'>
+    <link rel="stylesheet" href="{% static 'css/grid.css' %}" type='text/css' media='all'>
+
+     <link href="https://fonts.googleapis.com/css?family=Montserrat:700" rel="stylesheet" property="stylesheet" type="text/css" media="all">
+
+    <link rel="stylesheet" href='https://fonts.googleapis.com/css?family=Work+Sans%3A100%2C200%2C300%2Cregular%2C500%2C600%2C700%2C800%2C900%7CPoppins%3A300%2Cregular%2C500%2C600%2C700%2C900&amp;subset' type='text/css' media='all'>
+    <link href="http://fonts.googleapis.com/css?family=Poppins:600%2C700%2C400%2C500" rel="stylesheet" property="stylesheet" type="text/css" media="all">
+
+    <link rel="icon" href="{% static 'images/mtc_logo.png' %}" sizes="32x32">
+    <link rel="icon" href="{% static 'images/mtc_logo.png' %}" sizes="192x192">
+    <link rel="apple-touch-icon-precomposed" href="{% static 'images/mtc_logo.png' %}">
+</head>
+
+
+
+<body class="home page-template-default page page-id-350 woocommerce-no-js ppb_enable">
+
+
+     <input type="hidden" id="pp_menu_layout" name="pp_menu_layout" value="leftalign">
+    <input type="hidden" id="pp_enable_right_click" name="pp_enable_right_click" value="0">
+    <input type="hidden" id="pp_enable_dragging" name="pp_enable_dragging" value="0">
+    <input type="hidden" id="pp_image_path" name="pp_image_path" value="images/">
+    <input type="hidden" id="pp_homepage_url" name="pp_homepage_url" value="/">
+    <input type="hidden" id="pp_fixed_menu" name="pp_fixed_menu" value="1">
+    <input type="hidden" id="tg_smart_fixed_menu" name="tg_smart_fixed_menu" value="1">
+    <input type="hidden" id="tg_sidebar_sticky" name="tg_sidebar_sticky" value="1">
+    <input type="hidden" id="pp_topbar" name="pp_topbar" value="0">
+    <input type="hidden" id="post_client_column" name="post_client_column" value="4">
+    <input type="hidden" id="pp_back" name="pp_back" value="Back">
+    <input type="hidden" id="pp_page_title_img_blur" name="pp_page_title_img_blur" value="">
+    <input type="hidden" id="tg_portfolio_filterable_link" name="tg_portfolio_filterable_link" value="">
+    <input type="hidden" id="tg_flow_enable_reflection" name="tg_flow_enable_reflection" value="">
+    <input type="hidden" id="tg_lightbox_skin" name="tg_lightbox_skin" value="metro-black">
+    <input type="hidden" id="tg_lightbox_thumbnails" name="tg_lightbox_thumbnails" value="horizontal">
+    <input type="hidden" id="tg_lightbox_thumbnails_display" name="tg_lightbox_thumbnails_display" value="1">
+    <input type="hidden" id="tg_lightbox_opacity" name="tg_lightbox_opacity" value="0.8">
+    <input type="hidden" id="tg_sidemenu_overlay_effect" name="tg_sidemenu_overlay_effect" value="blur">
+    <input type="hidden" id="tg_cart_url" name="tg_cart_url" value="#">
+    <input type="hidden" id="tg_live_builder" name="tg_live_builder" value="0">
+    <input type="hidden" id="pp_footer_style" name="pp_footer_style" value="3">
+
+    <!-- Begin mobile menu -->
+    <a id="close_mobile_menu" href="javascript:;"></a>
+
+    <div class="mobile_menu_wrapper">
+        <a id="mobile_menu_close" href="javascript:;" class="button"><span class="ti-close"></span></a>
+
+        <div class="mobile_menu_content">
+
+            <div class="menu-main-menu-container">
+                <ul id="mobile_main_menu" class="mobile_main_nav">
+                    <li class="menu-item current-menu-item menu-item-has-children"><a href="/#home">Home</a>
+                        
+                    </li>
+                    <li class="menu-item menu-item-has-children"><a  href="/#agenda">Agenda</a>
+                    
+                    </li>
+                    <li class="menu-item menu-item-has-children"><a href="/#speakers">Speakers</a>
+                       
+                    </li>  
+                    <li class="menu-item menu-item-has-children"><a href="/#location">Location</a>
+                       
+                    </li>  
+                    
+                </ul>
+            </div>
+            <!-- Begin side menu sidebar -->
+            <div class="page_content_wrapper">
+                <div class="sidebar_wrapper">
+                    <div class="sidebar">
+
+                        <div class="content">
+
+                            <ul class="sidebar_widget">
+                            </ul>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- End side menu sidebar -->
+
+            
+        </div>
+    </div>
+    <!-- End mobile menu -->
+    <!-- Begin template wrapper -->
+    <div id="wrapper" class="hasbg transparent">
+
+        <div class="header_style_wrapper">
+            <!-- End top bar -->
+
+            <div class="top_bar hasbg">
+                <div class="standard_wrapper">
+                    <!-- Begin logo -->
+                    <div id="logo_wrapper">
+                        <div id="logo_normal" class="logo_container">
+                            <div class="logo_align">
+                                <a id="custom_logo" class="logo_wrapper hidden" href="/">
+                                    <img src="{% static 'images/logo2x_white.webp' %}" alt="" width="90" height="45">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div id="logo_transparent" class="logo_container">
+                            <div class="logo_align">
+                                <a id="custom_logo_transparent" class="logo_wrapper default" href="/">
+                                    <img src="{% static 'images/logo2x_white.webp' %}" alt="" width="90" height="45">
+                                </a>
+                            </div>
+                        </div>
+                        <!-- End logo -->
+
+            <!-- start here -->
+                        <div id="menu_wrapper">
+                            <div id="nav_wrapper">
+                                <div class="nav_wrapper_inner">
+                                    <div id="menu_border_wrapper">
+                                        <div class="menu-main-menu-container">
+
+
+                                            <ul id="main_menu" class="nav">
+                                                <li class="menu-item current-menu-item menu-item-has-children"><a href="/">Home</a>
+                                                    
+                                                </li>
+
+                                                
+                                                <li class="menu-item menu-item-has-children "><a href="/#agenda">Agenda</a>
+                                                    
+                                                </li>
+
+                                                <li class="menu-item menu-item-has-children"><a href="/#speakers">Speakers</a>
+                                                    
+                                                </li>
+                                                <li class="menu-item menu-item-has-children"><a href="/#location">Location</a>
+                                                    
+                                                </li>
+                                                
+                                                
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Begin right corner buttons -->
+                                <div id="logo_right_button">
+
+                                    <a href="/rejistu/register/" id="get_ticket" class="button ghost">Register for QR Code!</a>
+
+                                    <!-- Begin side menu -->
+                                    <a href="javascript:;" id="mobile_nav_icon"><span class="ti-menu"></span></a>
+                                    <!-- End side menu -->
+
+                                </div>
+                                <!-- End right corner buttons -->
+                            </div>
+                            <!-- End main nav -->
+                        </div>
+                      </div>
+                </div>
+            </div>
+        </div>
+
+ <!-- end menu -->
+
+<div class="ppb_wrapper">
+<div>
+            <section>
+            
+            <div class="footer_bar  ppb_wrapper ">
+
+            <div class="footer_bar_wrapper ">
+                
+                <br class="clear">
+            </div>
+        </div>
+
+            </section>
+
+
+            <section>
+                <!-- rejistu/templates/rejistu/register.html -->
+
+
+<section style="background-color: lightsteelblue;"> 
+
+
+
+<form method="post" enctype="multipart/form-data" id="registration-form">
+<br>
+
+
+    <div class="container">
+
+    	
+
+        <div class="column left">
+        	<h1 class="welcome">Welcome! <br> {{ registrant.first_name }} {{ registrant.last_name }}!</h1>
+            
+            <img class="fotografia image-cropper sentrufoto" src="{{ registrant.picture.url }}" alt="Profile Picture">
+
+        </div>
+        <div class="column right">
+            <h2>Professional Information</h2>
+            <span style="display:inline-block; margin-left: 20px;">
+            <ul class="pin">
+            <li><p> <b>Name:</b> {{ registrant.first_name }} {{ registrant.last_name }}</p></li>
+            <li><p><b>Position:</b> {{ registrant.position }}</p></li>
+            <li><p><b>Institution:</b> {{ registrant.institution }}</p></li>
+            </ul>
+            </span>
+            <br>
+            <div><img class="sentru" src="{{ registrant.qr_code.url }}" alt="QR Code"></div>
+
+  
+    </div>
+
+</form>
+
+ </section>
+
+
+
+
+
+
+</div>
+            
+            
+        
+    
+<!-- end here -->
+
+
+<div id="footer" class=" ppb_wrapper">
+            <ul class="sidebar_widget three">
+                <li id="text-2" class="widget widget_text">
+                    <div class="textwidget">
+                        <p><img src="{% static 'images/mtc_logo.webp' %}" width="90" height="45" alt=" MTC"></p>
+                        <p>The Ministry of Transport and Communications (MTC) of Timor-Leste serves as the principal authority responsible for formulating, implementing, and overseeing national policies in the transport and communications sectors.</p>
+                        <div class="ppb_header_content">
+                        <p>Ministry of Transport and Communication<a class="button medium" href="https://mtc.gov.tl/tl" target="_blank">website</a></p>
+
+                        </div>
+                    </div>
+                </li>
+                <li id="grandconference_flickr-3" class="widget GrandConference_Flickr">
+                    <h2 class="widgettitle">Ministry of Transport and Communication, Timor-Leste</h2>
+                    <ul class="flickr">
+                        
+                            <a href="https://mtc.gov.tl/tl" target="_blank"><img src="{% static 'images/mtc_office.jpg' %}" alt="MTC Office" width="100%" height="100%"></a>
+                    </ul>
+                    <br class="clear">
+                </li>
+                <li id="mc4wp_form_widget-2" class="widget widget_mc4wp_form_widget">
+                    <h2 class="widgettitle">Location</h2>
+
+                    <form id="mc4wp-form-1" class="mc4wp-form mc4wp-form-92" method="post" data-id="92" data-name="">
+                        <div class="mc4wp-form-fields">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d583.5078943865508!2d125.57942747477571!3d-8.558740068155215!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2d01e79d77f89f57%3A0x6a1c675a1923b67b!2sMTC!5e1!3m2!1sen!2stl!4v1741146865059!5m2!1sen!2stl" width="400" height="270" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+                        <div class="mc4wp-response"></div>
+                    </form>
+                </li>
+            </ul>
+        </div>
+
+        <div class="footer_bar  ppb_wrapper ">
+
+            <div class="footer_bar_wrapper ">
+                <div id="copyright">Copyright © 2025<a href="https://www.tic.gov.tl" target="_blank"> TIC TIMOR</a></div>
+                <br class="clear">
+                <a id="toTop" href="javascript:;"><i class="fa fa-angle-up"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div id="side_menu_wrapper" class="overlay_background">
+        <a id="close_share" href="javascript:;"><span class="ti-close"></span></a>
+    </div>
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <script src="{% static 'js/jquery-migrate.min.js' %}"></script>
+    <script src="{% static 'js/plugins/revslider/public/assets/js/jquery.themepunch.tools.min.js' %}"></script>
+    <script src="{% static 'js/plugins/revslider/public/assets/js/jquery.themepunch.revolution.min.js' %}"></script>
+    <script src="{% static 'js/plugins/revslider/public/assets/js/extensions/revolution.extension.slideanims.min.js' %}"></script>
+    <script src="{% static 'js/plugins/revslider/public/assets/js/extensions/revolution.extension.layeranimation.min.js' %}"></script>
+    <script src="{% static 'js/plugins/revslider/public/assets/js/extensions/revolution.extension.kenburn.min.js' %}"></script>
+    <script src="{% static 'js/plugins/revslider/public/assets/js/extensions/revolution.extension.navigation.min.js' %}"></script>
+    <script src="{% static 'js/plugins/revslider/public/assets/js/extensions/revolution.extension.parallax.min.js' %}"></script>  
+    <script src="{% static 'js/plugins/revslider/public/assets/js/extensions/revolution.extension.actions.min.js' %}"></script> 
+    <script src="{% static 'js/plugins/revslider/public/assets/js/extensions/revolution.extension.video.min.js' %}"></script>
+    <script src="{% static 'js/plugins/ui/core.min.js' %}"></script>
+    <script src="{% static 'js/plugins/jquery.requestAnimationFrame.js' %}"></script>
+    <script src="{% static 'js/plugins/ilightbox.packed.js' %}"></script>
+    <script src="{% static 'js/plugins/jquery.easing.js' %}"></script>
+    <script src="{% static 'js/plugins/waypoints.min.js' %}"></script>
+    <script src="{% static 'js/plugins/jquery.isotope.js' %}"></script>
+    <script src="{% static 'js/plugins/jquery.masory.js' %}"></script>
+    <script src="{% static 'js/plugins/jquery.tooltipster.min.js' %}"></script>
+    <script src="{% static 'js/plugins/jarallax.js' %}"></script>
+    <script src="{% static 'js/plugins/jquery.sticky-kit.min.js' %}"></script>
+    <script src="{% static 'js/plugins/jquery.stellar.min.js' %}"></script>
+    <script src="{% static 'js/plugins/jquery.cookie.js' %}"></script>
+    <script src="{% static 'js/plugins/custom_plugins.js' %}"></script>
+    <script src="{% static 'js/plugins/custom.js' %}"></script>
+    <script src="{% static 'js/plugins/custom_onepage.js' %}"></script>
+    <script src="{% static 'js/plugins/jquery.countdown.js' %}"></script>
+    <script src="{% static 'js/plugins/imagesloaded.min.js' %}"></script>
+    <script src="{% static 'js/plugins/masonry.min.js' %}"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBCmVhK5ZjYRjzAe-e9ZKS1mA3NBPuViwQ"></script>
+    <script src="{% static 'js/plugins/jquery.simplegmaps.min.js' %}"></script>
+    <script src="{% static 'js/plugins/jarallax-video.js' %}"></script>
+    <script src="{% static 'js/plugins/jquery.cookie.js' %}"></script>
+    <script src="{% static 'js/plugins/custom_clock.js' %}"></script>
+    <script>
+        /* <![CDATA[ */
+        var mc4wp_forms_config = [];
+        /* ]]> */
+    </script>
+    <script>
+        jQuery(document).ready(function() {
+            jQuery("#map1566739327259493916").simplegmaps({
+                MapOptions: {
+                    mapTypeId: google.maps.MapTypeId.ROADMAP,
+                    zoom: 8,
+                    scrollwheel: false,
+                }
+            });
+        });
+    </script>
+    <script type="text/javascript">
+        function setREVStartSize(e) {
+            try {
+                var i = jQuery(window).width(),
+                    t = 9999,
+                    r = 0,
+                    n = 0,
+                    l = 0,
+                    f = 0,
+                    s = 0,
+                    h = 0;
+                if (e.responsiveLevels && (jQuery.each(e.responsiveLevels, function(e, f) {
+                        f > i && (t = r = f, l = e), i > f && f > r && (r = f, n = e)
+                    }), t > r && (l = n)), f = e.gridheight[l] || e.gridheight[0] || e.gridheight, s = e.gridwidth[l] || e.gridwidth[0] || e.gridwidth, h = i / s, h = h > 1 ? 1 : h, f = Math.round(h * f), "fullscreen" == e.sliderLayout) {
+                    var u = (e.c.width(), jQuery(window).height());
+                    if (void 0 != e.fullScreenOffsetContainer) {
+                        var c = e.fullScreenOffsetContainer.split(",");
+                        if (c) jQuery.each(c, function(e, i) {
+                            u = jQuery(i).length > 0 ? u - jQuery(i).outerHeight(!0) : u
+                        }), e.fullScreenOffset.split("%").length > 1 && void 0 != e.fullScreenOffset && e.fullScreenOffset.length > 0 ? u -= jQuery(window).height() * parseInt(e.fullScreenOffset, 0) / 100 : void 0 != e.fullScreenOffset && e.fullScreenOffset.length > 0 && (u -= parseInt(e.fullScreenOffset, 0))
+                    }
+                    f = u
+                } else void 0 != e.minHeight && f < e.minHeight && (f = e.minHeight);
+                e.c.closest(".rev_slider_wrapper").css({
+                    height: f
+                })
+            } catch (d) {
+                console.log("Failure at Presize of Slider:" + d)
+            }
+        };
+    </script>
+    <script>
+        (function() {
+            function addEventListener(element, event, handler) {
+                if (element.addEventListener) {
+                    element.addEventListener(event, handler, false);
+                } else if (element.attachEvent) {
+                    element.attachEvent('on' + event, handler);
+                }
+            }
+
+            function maybePrefixUrlField() {
+                if (this.value.trim() !== '' && this.value.indexOf('http') !== 0) {
+                    this.value = "http://" + this.value;
+                }
+            }
+
+            var urlFields = document.querySelectorAll('.mc4wp-form input[type="url"]');
+            if (urlFields && urlFields.length > 0) {
+                for (var j = 0; j < urlFields.length; j++) {
+                    addEventListener(urlFields[j], 'blur', maybePrefixUrlField);
+                }
+            } /* test if browser supports date fields */
+            var testInput = document.createElement('input');
+            testInput.setAttribute('type', 'date');
+            if (testInput.type !== 'date') {
+
+                /* add placeholder & pattern to all date fields */
+                var dateFields = document.querySelectorAll('.mc4wp-form input[type="date"]');
+                for (var i = 0; i < dateFields.length; i++) {
+                    if (!dateFields[i].placeholder) {
+                        dateFields[i].placeholder = 'YYYY-MM-DD';
+                    }
+                    if (!dateFields[i].pattern) {
+                        dateFields[i].pattern = '[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|1[0-9]|2[0-9]|3[01])';
+                    }
+                }
+            }
+
+        })();
+    </script>
+    <script type="text/javascript">
+        function revslider_showDoubleJqueryError(sliderID) {
+            var errorMessage = "Revolution Slider Error: You have some jquery.js library include that comes after the revolution files js include.";
+            errorMessage += "<br> This includes make eliminates the revolution slider libraries, and make it not work.";
+            errorMessage += "<br><br> To fix it you can:<br>&nbsp;&nbsp;&nbsp; 1. In the Slider Settings -> Troubleshooting set option:  <strong><b>Put JS Includes To Body</b></strong> option to true.";
+            errorMessage += "<br>&nbsp;&nbsp;&nbsp; 2. Find the double jquery.js include and remove it.";
+            errorMessage = "<span style='font-size:16px;color:#BC0C06;'>" + errorMessage + "</span>";
+            jQuery(sliderID).show().html(errorMessage);
+        }
+    </script>    
+    <script>
+        var htmlDiv = document.getElementById("rs-plugin-settings-inline-css");
+        var htmlDivCss = "";
+        if (htmlDiv) {
+            htmlDiv.innerHTML = htmlDiv.innerHTML + htmlDivCss;
+        } else {
+            var htmlDiv = document.createElement("div");
+            htmlDiv.innerHTML = "<style>" + htmlDivCss + "</style>";
+            document.getElementsByTagName("head")[0].appendChild(htmlDiv.childNodes[0]);
+        }
+    </script>
+    <script type="text/javascript">
+        setREVStartSize({
+            c: jQuery('#rev_slider_1_1'),
+            gridwidth: [1240],
+            gridheight: [800],
+            sliderLayout: 'fullwidth'
+        });
+
+        var revapi1,
+            tpj = jQuery;
+
+        tpj(document).ready(function() {
+            if (tpj("#rev_slider_1_1").revolution == undefined) {
+                revslider_showDoubleJqueryError("#rev_slider_1_1");
+            } else {
+                revapi1 = tpj("#rev_slider_1_1").show().revolution({
+                    sliderType: "standard",
+                    jsFileLocation: "js/plugins/revslider/public/assets/js/",
+                    sliderLayout: "fullwidth",
+                    dottedOverlay: "none",
+                    delay: 9000,
+                    navigation: {
+                        onHoverStop: "off",
+                    },
+                    visibilityLevels: [1240, 1024, 778, 480],
+                    gridwidth: 1240,
+                    gridheight: 800,
+                    lazyType: "none",
+                    shadow: 0,
+                    spinner: "spinner3",
+                    stopLoop: "off",
+                    stopAfterLoops: -1,
+                    stopAtSlide: -1,
+                    shuffle: "off",
+                    autoHeight: "off",
+                    disableProgressBar: "on",
+                    hideThumbsOnMobile: "off",
+                    hideSliderAtLimit: 0,
+                    hideCaptionAtLimit: 0,
+                    hideAllCaptionAtLilmit: 0,
+                    debugMode: false,
+                    fallbacks: {
+                        simplifyAll: "off",
+                        nextSlideOnWindowFocus: "off",
+                        disableFocusListener: false,
+                    }
+                });
+            }
+
+        }); /*ready*/
+    </script>
+    <script>
+        var htmlDivCss = '  #rev_slider_1_1_wrapper .tp-loader.spinner3 div { background-color: #ff2d55 !important; } ';
+        var htmlDiv = document.getElementById('rs-plugin-settings-inline-css');
+        if (htmlDiv) {
+            htmlDiv.innerHTML = htmlDiv.innerHTML + htmlDivCss;
+        } else {
+            var htmlDiv = document.createElement('div');
+            htmlDiv.innerHTML = '<style>' + htmlDivCss + '</style>';
+            document.getElementsByTagName('head')[0].appendChild(htmlDiv.childNodes[0]);
+        }
+    </script>
+
+
+    <script>
+    if (window.location.hostname !== "localhost") {
+        console.error = function () {}; // Suppress errors in production
+        window.addEventListener('error', function (e) {
+            e.preventDefault(); // Prevent default error logging
+            return true;
+        });
+    }
+</script>
+
+
+<script>
+    document.addEventListener("error", function(e) {
+        e.target.style.display = "none";
+    }, true);
+</script>
+
+
+<script>
+    window.postMessage(message, '*');
+</script>
+
+
+
+</body>
+
+</html>
+
+
+
+
+
+<!-- belongs to register form -->
+
+
+<!-- Include Signature Pad -->
+<script src="https://cdn.jsdelivr.net/npm/signature_pad@4.0.0/dist/signature_pad.umd.min.js"></script>
+<script>
+    const canvas = document.getElementById('signature-pad');
+    const signaturePad = new SignaturePad(canvas);
+
+    // Clear signature
+    document.getElementById('clear-signature').addEventListener('click', () => {
+        signaturePad.clear();
+    });
+
+    // Function to check quota
+    function checkQuota() {
+        const institutionId = document.getElementById('id_institution').value;  // Get selected institution ID
+        const quotaWarning = document.getElementById('quota-warning');  // Get the warning message container
+
+        if (!institutionId) {
+            quotaWarning.textContent = 'Please select an institution.';
+            quotaWarning.style.display = 'block';
+            return false;
+        }
+
+        // Fetch the institution's quota and access pass counter
+        fetch(`/rejistu/get-institution-quota/${institutionId}/`)
+            .then(response => response.json())
+            .then(data => {
+                if (data.access_pass_counter >= data.quota) {
+                    quotaWarning.textContent = `Atensaun!: Quota ba Instituisaun ${data.name} hotu ona, Quota access pass hamutuk ${data.quota} deit.`;
+                    quotaWarning.style.display = 'block';
+                    return false;
+                } else {
+                    // Hide the warning message if the quota is not reached
+                    quotaWarning.style.display = 'none';
+
+                    // Save signature as image data URL and submit the form
+                    const signatureData = signaturePad.toDataURL();
+                    document.getElementById('signature-data').value = signatureData;
+                    document.getElementById('registration-form').submit();
+                }
+            })
+            .catch(error => {
+                console.error('Error fetching quota:', error);
+                quotaWarning.textContent = 'An error occurred while checking the quota. Please try again.';
+                quotaWarning.style.display = 'block';
+            });
+    }
+
+    // Attach the checkQuota function to the form's submit event
+    document.getElementById('registration-form').addEventListener('submit', (e) => {
+        e.preventDefault();  // Prevent default form submission
+        if (signaturePad.isEmpty()) {
+            alert('Please provide a signature.');
+        } else {
+            checkQuota();
+        }
+    });
+
+    // Add an event listener to the institution dropdown to check quota on change
+    document.getElementById('id_institution').addEventListener('change', () => {
+        checkQuota();
+    });
+</script>
+
+
+
+
+
+
+ 
+
+
+
+
+<!-- rejistu/templates/rejistu/registrant_detail.html -->
+<h1>Registrant Details</h1>
+<img src="{{ registrant.picture.url }}" alt="Profile Picture">
+<p>Name: {{ registrant.first_name }} {{ registrant.last_name }}</p>
+<p>Position: {{ registrant.position }}</p>
+<p>Institution: {{ registrant.institution }}</p>
+<p>Email: {{ registrant.email }}</p>
+<p>Mobile Phone: {{ registrant.mobile_phone }}</p>
+<p>Access Pass: {{ registrant.access_pass }}</p>
+<p>Signature:</p>
+<img src="{{ registrant.signature.url }}" alt="Signature">
+<a href="/">Back to Main Page</a>

@@ -1,0 +1,4 @@
+from django.shortcuts import render
+
+def seminar_page(request):
+    return render(request, 'seminar/seminar_page.html')

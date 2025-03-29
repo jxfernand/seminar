@@ -1,0 +1,29 @@
+<!-- seminar_project/facer/templates/facer/capture_and_compare.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Face Recognition</title>
+</head>
+<body>
+    <h1>Face Recognition Check</h1>
+    <video id="video" width="640" height="480" autoplay></video>
+
+    <script>
+        const videoElement = document.getElementById('video');
+
+        // Access the webcam
+        navigator.mediaDevices.getUserMedia({ video: true })
+            .then(stream => {
+                videoElement.srcObject = stream;
+            })
+            .catch(err => {
+                console.error("Error accessing webcam: ", err);
+            });
+
+        // You can implement AJAX to send the video frame to the server for face comparison
+        // using setInterval() or other methods for periodic face recognition.
+    </script>
+</body>
+</html>
