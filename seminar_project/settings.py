@@ -33,9 +33,9 @@ MEDIA_ROOT = os.path.join(BASE_DIR_DB, "media")  # Where uploaded files are stor
 
 DEBUG = True
 
-ALLOWED_HOSTS = ["localhost", "172.16.102.94", "0.0.0.0", "192.168.215.7", "b617-45-115-73-191.ngrok-free.app", "172.20.10.2"]
+ALLOWED_HOSTS = ["localhost"]
 CSRF_TRUSTED_ORIGINS = [
-    "http://localhost", "http://172.16.102.94", "http://0.0.0.0", "http://192.168.215.7", "https://b617-45-115-73-191.ngrok-free.app", "http://172.20.10.2", "http://172.20.10.3"
+    "http://#"
 ]
 # Application definition
 
@@ -63,7 +63,7 @@ MIDDLEWARE = [
 ]
 
 
-GOOGLE_MAPS_API_KEY = "AIzaSyBCmVhK5ZjYRjzAe-e9ZKS1mA3NBPuViwQ"
+GOOGLE_MAPS_API_KEY = ""
 
 
 # Serve static files with WhiteNoise
